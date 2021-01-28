@@ -138,4 +138,10 @@ export interface CacheInterface {
   subscribe(listener: cacheListener): () => void
 }
 
-export type cacheListener = () => void
+export type CacheEvent = {
+  type: 'set' | 'clear' | 'delete'
+  key?: unknown
+  value?: unknown
+}
+
+export type cacheListener = (e: CacheEvent) => void

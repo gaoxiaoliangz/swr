@@ -1,4 +1,9 @@
-import { CacheInterface, keyInterface, cacheListener } from './types'
+import {
+  CacheInterface,
+  keyInterface,
+  cacheListener,
+  CacheEvent
+} from './types'
 import hash from './libs/hash'
 
 export default class Cache implements CacheInterface {
@@ -18,7 +23,11 @@ export default class Cache implements CacheInterface {
   set(key: keyInterface, value: any): any {
     const [_key] = this.serializeKey(key)
     this.__cache.set(_key, value)
-    this.notify()
+    this.notify({
+      type: 'set',
+      key,
+      value
+    })
   }
 
   keys() {
@@ -32,13 +41,18 @@ export default class Cache implements CacheInterface {
 
   clear() {
     this.__cache.clear()
-    this.notify()
+    this.notify({
+      type: 'clear'
+    })
   }
 
   delete(key: keyInterface) {
     const [_key] = this.serializeKey(key)
     this.__cache.delete(_key)
-    this.notify()
+    this.notify({
+      type: 'delete',
+      key
+    })
   }
 
   // TODO: introduce namespace for the cache
@@ -88,9 +102,9 @@ export default class Cache implements CacheInterface {
   }
 
   // Notify Cache subscribers about a change in the cache
-  private notify() {
+  private notify(e: CacheEvent) {
     for (let listener of this.__listeners) {
-      listener()
+      listener(e)
     }
   }
 }

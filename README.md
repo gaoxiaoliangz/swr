@@ -18,6 +18,12 @@
   </a>
 </p>
 
+## About Fork
+
+what's changed?
+
+- cache.subscribe passes event info to listener
+
 ## Introduction
 
 [swr.vercel.app](https://swr.vercel.app)
@@ -143,20 +149,33 @@ You can also use a [global configuration](#global-configuration) to provide defa
 
 ## Examples
 
-- [Global Configuration](#global-configuration)
-- [Data Fetching](#data-fetching)
-- [Conditional Fetching](#conditional-fetching)
-- [Dependent Fetching](#dependent-fetching)
-- [Multiple Arguments](#multiple-arguments)
-- [Manually Revalidate](#manually-revalidate)
-- [Mutation and Post Request](#mutation-and-post-request)
-- [Mutate Based on Current Data](#mutate-based-on-current-data)
-- [Returned Data from Mutate](#returned-data-from-mutate)
-- [SSR with Next.js](#ssr-with-nextjs)
-- [Suspense Mode](#suspense-mode)
-- [Error Retries](#error-retries)
-- [Prefetching Data](#prefetching-data)
-- [Request Deduplication](#request-deduplication)
+- [About Fork](#about-fork)
+- [Introduction](#introduction)
+- [Quick Start](#quick-start)
+- [Usage](#usage)
+  - [API](#api)
+    - [Parameters](#parameters)
+    - [Return Values](#return-values)
+    - [Options](#options)
+- [Examples](#examples)
+  - [Global Configuration](#global-configuration)
+  - [Data Fetching](#data-fetching)
+  - [Conditional Fetching](#conditional-fetching)
+  - [Dependent Fetching](#dependent-fetching)
+  - [Multiple Arguments](#multiple-arguments)
+  - [Manually Revalidate](#manually-revalidate)
+  - [Mutation and Post Request](#mutation-and-post-request)
+  - [Mutate Based on Current Data](#mutate-based-on-current-data)
+  - [Returned Data from Mutate](#returned-data-from-mutate)
+  - [Bound `mutate()`](#bound-mutate)
+  - [SSR with Next.js](#ssr-with-nextjs)
+  - [Suspense Mode](#suspense-mode)
+  - [Error Retries](#error-retries)
+  - [Prefetching Data](#prefetching-data)
+  - [Request Deduplication](#request-deduplication)
+- [Authors](#authors)
+- [License](#license)
+
 
 ### Global Configuration
 
