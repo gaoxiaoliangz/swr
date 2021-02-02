@@ -25,7 +25,7 @@ export default class Cache implements CacheInterface {
     this.__cache.set(_key, value)
     this.notify({
       type: 'set',
-      key,
+      key: _key,
       value
     })
   }
@@ -51,7 +51,7 @@ export default class Cache implements CacheInterface {
     this.__cache.delete(_key)
     this.notify({
       type: 'delete',
-      key
+      key: _key
     })
   }
 

@@ -113,7 +113,7 @@ export interface CacheInterface {
 
 export type CacheEvent = {
   type: 'set' | 'clear' | 'delete'
-  key?: unknown
+  key?: string
   value?: unknown
 }
 
